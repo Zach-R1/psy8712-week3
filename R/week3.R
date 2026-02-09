@@ -9,3 +9,7 @@ clean_df <- raw_df[format(raw_df$timeStart, "%Y-%m") != "2017-06", ]
 clean_df <- clean_df[clean_df$q6 == 1,]
 
 # Analysis
+clean_df$timeSpent <- difftime(clean_df$timeEnd, clean_df$timeStart, units = "secs")
+hist(clean_df$timeSpent <- as.numeric(clean_df$timeSpent))
+
+
